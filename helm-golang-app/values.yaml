@@ -1,0 +1,14 @@
+replicaCount: 1
+
+image:
+  repository: billelz/golang-istio-app
+  tag: latest
+  pullPolicy: Always
+
+service:
+  port: 2112
+
+prometheus:
+  scrape: "true"
+  port: "8080"
+  path: "/metrics"

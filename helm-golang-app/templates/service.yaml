@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: golang-istio-app
+  labels:
+    app: golang-istio-app
+spec:
+  selector:
+    app: golang-istio-app
+  ports:
+  - name: metrics
+    protocol: TCP
+    service:
+    port: 5050        # external port for Service
+    targetPort: 2112  # container port where metrics are exposed
+  type: ClusterIP
